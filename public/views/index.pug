@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    script(src="/public/app.ts")
+    link(rel='stylesheet', href='/style.css')
+  body
+    h1 ToDo App
+    form(action='/todos', method='post')
+      input(type='text', name='todo')
+      input(type='checkbox', name='completed')
+      label(for='completed') Completed
+      button(class='add' type='submit') Add Todo
+
+    if (filteredTodos && filteredTodos.length > 0)
+      each todo, i in filteredTodos
+        li
+        span= todo.title
+        span(class=todo.completed ? 'completed' : '')= todo.completed ? 'Completed' : 'Not Completed'
+        div(class='button')
+          a(class='delete' href=`/todos/${todo.id}/delete`) Delete

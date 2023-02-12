@@ -1,0 +1,14 @@
+button {
+  width: 100px;
+}
+
+li {
+  list-style: none;
+}
+
+.button {
+  width: 60px;
+  background-color: red;
+  text-decoration: none;
+  
+}
