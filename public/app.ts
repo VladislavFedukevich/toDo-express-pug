@@ -40,6 +40,7 @@ app.post("/todos", (req: Request, res: Record<any, any>) => {
     title: (req as any).body.todo,
     completed: (req as any).body.completed === "on",
   };
+  
   todos.push(todo);
   res.redirect("/");
 });

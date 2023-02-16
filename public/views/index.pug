@@ -12,10 +12,9 @@ html
       label(for='completed') Completed
       button(class='add' type='submit') Add Todo
 
-    if (filteredTodos && filteredTodos.length > 0)
-      each todo, i in filteredTodos
+      each todo, i in todos
         li
         span= todo.title
-        span(class=todo.completed ? 'completed' : '')= todo.completed ? 'Completed' : 'Not Completed'
+        span(class=todo.completed ? 'completed' : '')= todo.completed ? ' Completed' : ' Not Completed'
         div(class='button')
           a(class='delete' href=`/todos/${todo.id}/delete`) Delete
